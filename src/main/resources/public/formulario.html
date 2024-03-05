@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Example</title>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    </head>
+    <body>
+        <h1>Form with GET</h1>
+        <form action="/logservicefacade">
+            <label for="msg">Mensaje:</label><br>
+            <input id="msg" name="msg" type="text" value="John"><br><br>
+            <input onclick="loadGetMsg()" type="button" value="Submit">
+        </form>
+        <div id="getrespmsg"></div>
+        <script>
+            function loadGetMsg() {
+                let msgVar = document.getElementById("msg").value;
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {
+                    document.getElementById("getrespmsg").innerHTML =
+                    this.responseText;
+                }
+                xhttp.open("GET", "/logservicefacade?name="+msgVar);
+                xhttp.send();
+            }
+        </script>
+    </body>
+</html>
