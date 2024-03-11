@@ -67,6 +67,8 @@ La interfaz de usuario web permite al usuario ingresar un mensaje y ver los últ
 
 En resumen, la arquitectura del taller consiste en una aplicación web que utiliza un algoritmo de balanceo de carga de Round Robin para distribuir las solicitudes a tres instancias de un servicio REST, que a su vez se comunica con una base de datos MongoDB. La aplicación web se despliega en un contenedor Docker en una instancia de EC2 de AWS, y se utiliza un balanceador de carga de Round Robin para gestionar el tráfico de Internet.
 
+## Evaluación
+
 ### Video con las pruebas y los despliegues funcionando
 
 En el video se podrá ver cómo se hizo el despliegue en AWS y las pruebas correspondientes para verificar:
