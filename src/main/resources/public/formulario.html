@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Form Example</title>
+        <title>Registros</title>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <link href="formulario.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1>Form with GET</h1>
+        <h1>Registros</h1>
         <form action="/logservicefacade">
             <label for="msg">Mensaje:</label><br>
             <input id="msg" name="msg" type="text" value="John"><br><br>
-            <input onclick="loadGetMsg()" type="button" value="Submit">
+            <input onclick="loadGetMsg()" type="button" value="Almacenar">
         </form>
-        <div id="getrespmsg"></div>
-        <script>
-            function loadGetMsg() {
-                let msgVar = document.getElementById("msg").value;
-                const xhttp = new XMLHttpRequest();
-                xhttp.onload = function() {
-                    document.getElementById("getrespmsg").innerHTML =
-                    this.responseText;
-                }
-                xhttp.open("GET", "/logservicefacade?name="+msgVar);
-                xhttp.send();
-            }
-        </script>
+        <div>
+            <table id="registros">
+                <thead>
+                <tr>
+                    <th colspan="2">Registros Almacenados</th>
+                </tr>
+                <tr>
+                    <th>Fecha</th>
+                    <th align="right">Registro</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <script src="formulario.js"></script>
     </body>
 </html>

@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+
+input[type="text"] {
+    margin-top: 10px;
+    width: 690px;
+    height: 20px;
+    border: 3px solid #ddd;
+    border-radius: 5px;
+}
+
+
+#registros {
+    width: 700px;
+}
+
+#registros th, #registros td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#registros th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+input[type="button"] {
+    background-color: #f2f2f2;
+    border: 3px solid #ddd;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+}
