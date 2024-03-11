@@ -8,4 +8,4 @@ ENV LOG_SERVICES=LogService1;LogService2;LogService3
 COPY /target/classes /usrapp/bin/classes
 COPY /target/dependency /usrapp/bin/dependency
 
-CMD ["java","-cp","./classes:./dependency/*","com.example.awsprimerlogservice.LogServiceFacadeTest"]
+CMD ["java","-cp","./classes:./dependency/*","com.example.awsprimerlogservice.LogServiceFacade"]
