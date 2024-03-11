@@ -69,7 +69,13 @@ En resumen, la arquitectura del taller consiste en una aplicación web que utili
 
 ### Video con las pruebas y los despliegues funcionando
 
+En el video se podrá ver cómo se hizo el despliegue en AWS y las pruebas correspondientes para verificar:
+* La instancia de MongoDB este corriendo.
+* LogService responde en un objeto JSON con las 10 últimas cadenas almacenadas en la base de datos y la fecha en que fueron almacenadas en la instancia de MongoDB.
+* El cliente web tiene un campo y un botón y cada vez que el usuario envía un mensaje, este se lo envía al servicio REST y actualiza la pantalla con la información que este le regresa en formato JSON.
+* El servicio REST implementa un algoritmo de balanceo de cargas de Round Robin, delegando el procesamiento del mensaje y el retorno de la respuesta a cada una de las tres instancias del servicio LogService.
 
+[![Video de YouTube](https://img.youtube.com/vi/RlQumvKEDjM/sddefault.jpg)](https://www.youtube.com/watch?v=RlQumvKEDjM)
 
 ## Authors
 
