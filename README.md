@@ -71,7 +71,7 @@ En resumen, la arquitectura del taller consiste en una aplicación web que utili
 
 ## Evaluación
 
-### Caso de prueba 1: Almacenamiento de mensajes:
+### Caso de prueba 1 - Almacenamiento de mensajes:
 
 **Objetivo:** Verificar que los mensajes enviados por el usuario se almacenan correctamente en la base de datos MongoDB.
 
@@ -83,7 +83,7 @@ En resumen, la arquitectura del taller consiste en una aplicación web que utili
 
 ![Caso1-2.PNG](img/Caso1-2.PNG)
 
-### Caso de prueba 2: Balanceo de carga:
+### Caso de prueba 2 - Balanceo de carga:
 
 **Objetivo:** Verificar que el algoritmo de balanceo de carga Round Robin distribuye las solicitudes a las tres instancias del servicio LogService.
 
@@ -99,7 +99,7 @@ En resumen, la arquitectura del taller consiste en una aplicación web que utili
 
 ![Caso2-4.PNG](img/Caso2-4.PNG)
 
-### Caso de prueba 3: Validación de la respuesta JSON del servicio LogService
+### Caso de prueba 3 - Validación de la respuesta JSON del servicio LogService:
 
 **Objetivo:** Verificar que la respuesta JSON del servicio LogService contiene la información correcta y está formateada correctamente.
 
