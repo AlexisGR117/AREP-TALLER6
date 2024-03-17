@@ -58,6 +58,8 @@ mvn test
 
 ## Arquitectura
 
+![Arquitectura.png](img/Arquitectura.png)
+
 La aplicación web está compuesta por tres servicios: MongoDB, LogService y LogServiceFacade. 
 * **MongoDB** es una instancia de MongoDB que se ejecuta en un contenedor de Docker en una máquina virtual de EC2. 
 * **LogService** es un servicio REST que recibe una cadena, la almacena en la base de datos MongoDB y devuelve un objeto JSON con las 10 últimas cadenas almacenadas en la base de datos y la fecha en que fueron almacenadas.
@@ -68,6 +70,49 @@ La interfaz de usuario web permite al usuario ingresar un mensaje y ver los últ
 En resumen, la arquitectura del taller consiste en una aplicación web que utiliza un algoritmo de balanceo de carga de Round Robin para distribuir las solicitudes a tres instancias de un servicio REST, que a su vez se comunica con una base de datos MongoDB. La aplicación web se despliega en un contenedor Docker en una instancia de EC2 de AWS, y se utiliza un balanceador de carga de Round Robin para gestionar el tráfico de Internet.
 
 ## Evaluación
+
+### Caso de prueba 1: Almacenamiento de mensajes:
+
+**Objetivo:** Verificar que los mensajes enviados por el usuario se almacenan correctamente en la base de datos MongoDB.
+
+**Entrada:** El usuario ingresa un mensaje y lo envía.
+
+**Salida:** El mensaje se guarda en la base de datos MongoDB y se muestra en el cliente web.
+
+![Caso1-1.PNG](img/Caso1-1.PNG)
+
+![Caso1-2.PNG](img/Caso1-2.PNG)
+
+### Caso de prueba 2: Balanceo de carga:
+
+**Objetivo:** Verificar que el algoritmo de balanceo de carga Round Robin distribuye las solicitudes a las tres instancias del servicio LogService.
+
+**Entrada:** El usuario envía varios mensajes consecutivos.
+
+**Salida:** Los mensajes se distribuyen equitativamente entre las tres instancias del servicio LogService.
+
+![Caso2-1.PNG](img/Caso2-1.PNG)
+
+![Caso2-2.PNG](img/Caso2-2.PNG)
+
+![Caso2-3.PNG](img/Caso2-3.PNG)
+
+![Caso2-4.PNG](img/Caso2-4.PNG)
+
+### Caso de prueba 3: Validación de la respuesta JSON del servicio LogService
+
+**Objetivo:** Verificar que la respuesta JSON del servicio LogService contiene la información correcta y está formateada correctamente.
+
+**Entrada:** El usuario envía una solicitud HTTP al servicio LogService.
+
+**Salida:** El servicio LogService devuelve una respuesta JSON con la siguiente información: 
+
+* Un array con las 10 últimas cadenas almacenadas en la base de datos MongoDB.
+* La fecha en que se almacenaron las cadenas en la base de datos MongoDB.
+
+![Caso3-1.PNG](img/Caso3-1.PNG)
+
+![Caso3-2.PNG](img/Caso3-2.PNG)
 
 ### Video con las pruebas y los despliegues funcionando
 
